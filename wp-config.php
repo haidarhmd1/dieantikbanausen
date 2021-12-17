@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The base configuration for WordPress
  *
@@ -20,22 +21,22 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'diantikbanausen_wp_db' );
+define('DB_NAME', 'diantikbanausen_wp_db');
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '' );
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define('DB_HOST', 'localhost:8889');
 
 /** Database charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
+define('DB_CHARSET', 'utf8');
 
 /** The database collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+define('DB_COLLATE', '');
 
 /**#@+
  * Authentication unique keys and salts.
@@ -48,14 +49,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'kC$GDJ$gR,pmk`zZ=GDDjUP$D+*u>tFz.C-hA+E<4w%H#*55b:GW%/>hCf_]<hvL' );
-define( 'SECURE_AUTH_KEY',  '*5>,y>~L[u{%!>2)k~Kr[~{a(v=?xr+.T(c29CF/A&5bPgoT[===`L$+aCh/0Bpf' );
-define( 'LOGGED_IN_KEY',    'u6sw[cW7KtStBP!4$C}/bzOgKGw;topWBw@>j@1|Jbajb?HSbJ30S5%N{Di!MPS[' );
-define( 'NONCE_KEY',        'hPoJE_:JzqZIt>Seprc+D8M5K}zICdFV8:@n!,mfmtjfa+8_lB(+R(bV|X^$PT(U' );
-define( 'AUTH_SALT',        '_(MdH2hd)0<8Bh#eTWi4,2`|OKgjSA0nddjv|F`X._:v>7]r%B`OC%yq&&;j|)bv' );
-define( 'SECURE_AUTH_SALT', 'dmygs-H5s*J@kOe*d+M8HcDfz6#k^_$/W=qQlnSKg)jNjnC%;<HLnYx?U_Q`zab0' );
-define( 'LOGGED_IN_SALT',   'Ma^Rxm%woV%RNU]]$W=Aan(5=7C@_ bl EMr.EDo>dRZK#;U^PC:(u0rM^Ij_B-&' );
-define( 'NONCE_SALT',       'u1,_bDvX 4)+y1JwMl1P%3OaOY8EQSFt$~ii]FM<WerAs}YT.5f7#qgP`Zr{C/*p' );
+define('AUTH_KEY',         'kC$GDJ$gR,pmk`zZ=GDDjUP$D+*u>tFz.C-hA+E<4w%H#*55b:GW%/>hCf_]<hvL');
+define('SECURE_AUTH_KEY',  '*5>,y>~L[u{%!>2)k~Kr[~{a(v=?xr+.T(c29CF/A&5bPgoT[===`L$+aCh/0Bpf');
+define('LOGGED_IN_KEY',    'u6sw[cW7KtStBP!4$C}/bzOgKGw;topWBw@>j@1|Jbajb?HSbJ30S5%N{Di!MPS[');
+define('NONCE_KEY',        'hPoJE_:JzqZIt>Seprc+D8M5K}zICdFV8:@n!,mfmtjfa+8_lB(+R(bV|X^$PT(U');
+define('AUTH_SALT',        '_(MdH2hd)0<8Bh#eTWi4,2`|OKgjSA0nddjv|F`X._:v>7]r%B`OC%yq&&;j|)bv');
+define('SECURE_AUTH_SALT', 'dmygs-H5s*J@kOe*d+M8HcDfz6#k^_$/W=qQlnSKg)jNjnC%;<HLnYx?U_Q`zab0');
+define('LOGGED_IN_SALT',   'Ma^Rxm%woV%RNU]]$W=Aan(5=7C@_ bl EMr.EDo>dRZK#;U^PC:(u0rM^Ij_B-&');
+define('NONCE_SALT',       'u1,_bDvX 4)+y1JwMl1P%3OaOY8EQSFt$~ii]FM<WerAs}YT.5f7#qgP`Zr{C/*p');
 
 /**#@-*/
 
@@ -79,7 +80,7 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define('WP_DEBUG', false);
 
 /* Add any custom values between this line and the "stop editing" line. */
 
@@ -88,8 +89,8 @@ define( 'WP_DEBUG', false );
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
+if (!defined('ABSPATH')) {
+	define('ABSPATH', __DIR__ . '/');
 }
 
 /** Sets up WordPress vars and included files. */

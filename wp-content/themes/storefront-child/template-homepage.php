@@ -17,32 +17,141 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<div class="hero-banner-container">
-			<h1>hero banner</h1>
-		</div>
-		<div class="category-container">
-			<span>Category 1</span>
-			<span>Category 2</span>
-			<span>Category 3</span>
-			<span>Category 4</span>
+		<div class="hero-banner-container mb-3">
+			<div class="title-banner-container">
+				<div class="main-container-title">
+					<span>
+						<?php echo get_field('sub_title', get_the_ID()); ?>
+					</span>
+					<h1>
+						<?php echo get_field('headline', get_the_ID()); ?>
+					</h1>
+				</div>
+				<div class="title-sub-banner-container">
+					<span>100+ ananana</span> |
+					<span>100+ ananana</span>
+				</div>
+			</div>
+			<div class="image-slide-container">
+				<div class="slick-slider">
+					<?php if (get_field('banner_image', get_the_ID())) {
+						echo '<div><img src="' . get_field('banner_image', get_the_ID()) . '" alt=""></div>';
+					} ?>
+					<?php if (get_field('banner_image_2', get_the_ID())) {
+						echo '<div><img src="' . get_field('banner_image_2', get_the_ID()) . '" alt=""></div>';
+					} ?>
+					<?php if (get_field('banner_image_3', get_the_ID())) {
+						echo '<div><img src="' . get_field('banner_image_3', get_the_ID()) . '" alt=""></div>';
+					} ?>
+					<?php if (get_field('banner_image_4', get_the_ID())) {
+						echo '<div><img src="' . get_field('banner_image_4', get_the_ID()) . '" alt=""></div>';
+					} ?>
+				</div>
+			</div>
 		</div>
 
-		<div class="aboutus-container">
+		<div class="aboutus-container col-full mb-3 text-center">
 			<h1>
-				test
+				<?php echo get_field('wer_wir_sind', get_the_ID()); ?>
 			</h1>
-			<h2>
-				what we do and who we are
-			</h2>
+			<p>
+				<?php echo get_field('wer_wir_sind_text', get_the_ID()); ?>
+			</p>
 		</div>
-		<div class="main-product-with-text-container">
-
+		<div class="category-container col-full mb-3">
+			<div class="header-title-cat" style="text-align: center;">
+				<h2>Was wir haben</h2>
+			</div>
+			<div class="categories-container">
+				<?php
+				$args = array(
+					'taxonomy' => 'product_cat',
+					'hide_empty' => false,
+				);
+				$terms = get_terms($args);
+				if ($terms) {
+					echo '<div class="hp-woocommerce-categories">';
+					foreach ($terms as $term) {
+						echo '<div class="hp-woocommerce-product-category-page">';
+						woocommerce_subcategory_thumbnail($term);
+						echo '<p>';
+						echo '<a href="' .  esc_url(get_term_link($term)) . '" class="' . $term->slug . '">';
+						echo $term->name;
+						echo '</a>';
+						echo '</p>';
+						echo '</div>';
+					}
+					echo '</div>';
+				} ?>
+			</div>
 		</div>
-		<div class="some-products-container">
+		<div class="main-product-with-text-container col-full mb-3">
+			<div class="some_our_product_title text-center">
+				<h2>Ein glimps unsere Produkte</h2>
+			</div>
+			<div class="some_our_products_product_loop">
+				<?php
+				$args = array(
+					'post_type' => 'product',
+					'posts_per_page' => 12
+				);
+				$loop = new WP_Query($args);
+				if ($loop->have_posts()) {
+					while ($loop->have_posts()) : $loop->the_post(); ?>
+						<a href="<?php echo get_permalink($loop->post->ID) ?>" class="text-center">
+							<div class="product-a" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;">
 
+							</div>
+							<p><?php echo get_the_title(); ?></p>
+						</a>
+				<?php
+					endwhile;
+				} else {
+					echo __('No products found');
+				}
+				wp_reset_postdata();
+				?>
+			</div>
+			<div class="view-all-products">
+				<a href="">Alle Produkte</a>
+			</div>
 		</div>
-		<div class="where-to-find-us-container">
-
+		<div class="where-to-find-us-container col-full mb-3">
+			<div class="info-text text-center">
+				<h1>
+					Wo man uns finden kann
+				</h1>
+				<div class="info">
+					Die Antik - Banausen
+					Sandra Wolgien
+					Pascalstr. 16
+					10587 Berlin
+					Tel: 0049 30 290 45 990
+				</div>
+			</div>
+			<div class="map-google">
+				<div class="mapouter">
+					<div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net"></a><br>
+						<style>
+							.mapouter {
+								margin-top: 25px;
+								position: relative;
+								text-align: right;
+								height: 500px;
+								width: 100%;
+							}
+						</style><a href="https://www.embedgooglemap.net">how to add google map to website</a>
+						<style>
+							.gmap_canvas {
+								overflow: hidden;
+								background: none !important;
+								height: 500px;
+								width: 100%;
+							}
+						</style>
+					</div>
+				</div>
+			</div>
 		</div>
 
 

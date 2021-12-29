@@ -4,6 +4,22 @@
         "title": "Homepage ACF",
         "fields": [
             {
+                "key": "field_61cc57be95dbb",
+                "label": "Banner",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
                 "key": "field_61c077275e686",
                 "label": "Banner Image",
                 "name": "banner_image",
@@ -76,30 +92,6 @@
                 "mime_types": ""
             },
             {
-                "key": "field_61c0774c5e689",
-                "label": "Banner Image 4",
-                "name": "banner_image_4",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "url",
-                "preview_size": "medium",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
-            },
-            {
                 "key": "field_61c077ba415f0",
                 "label": "Headline",
                 "name": "headline",
@@ -138,6 +130,22 @@
                 "maxlength": ""
             },
             {
+                "key": "field_61cc57d395dbc",
+                "label": "Wer wir sind",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
                 "key": "field_61c092252a7bd",
                 "label": "Wer wir sind",
                 "name": "wer_wir_sind",
@@ -160,7 +168,42 @@
                 "key": "field_61c0922f2a7be",
                 "label": "Wer wir sind text",
                 "name": "wer_wir_sind_text",
-                "type": "textarea",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_61cc57ec95dbd",
+                "label": "Produkte",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_61cc580295dbe",
+                "label": "Kategorie Title",
+                "name": "kategorie_title",
+                "type": "text",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -171,9 +214,121 @@
                 },
                 "default_value": "",
                 "placeholder": "",
-                "maxlength": "",
-                "rows": "",
-                "new_lines": "br"
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_61cc580f95dbf",
+                "label": "Soll Kategorien zu sehen sein ?",
+                "name": "soll_kategorien_zu_sehen_sein_",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "Ja",
+                "ui_off_text": "Nein"
+            },
+            {
+                "key": "field_61cc583c95dc0",
+                "label": "Produkte Titel",
+                "name": "produkte_titel",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_61cc584495dc1",
+                "label": "Produkte Nummer",
+                "name": "produkte_nummer",
+                "type": "range",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_61cc586895dc2",
+                "label": "Wo man uns findet",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_61cc587b95dc3",
+                "label": "Wo man uns findet Title",
+                "name": "wo_man_uns_findet_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_61cc588995dc4",
+                "label": "Kontaktinformation",
+                "name": "kontaktinformation",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
             }
         ],
         "location": [
@@ -186,7 +341,7 @@
             ]
         ],
         "menu_order": 0,
-        "position": "normal",
+        "position": "acf_after_title",
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",

@@ -27,10 +27,10 @@ define('DB_NAME', 'diantikbanausen_wp_db');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', '');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost:8889');
+define('DB_HOST', 'localhost');
 
 /** Database charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -85,7 +85,7 @@ define('WP_DEBUG', false);
 /* Add any custom values between this line and the "stop editing" line. */
 
 
-
+define( 'WC_GZD_ENCRYPTION_KEY', '8f82ca19b0c30b1bd134672709e12ddb79a445ec0ad1177895c285639cc9ef20' );
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */

@@ -20,17 +20,17 @@ get_header(); ?>
 		<div class="hero-banner-container mb-3">
 			<div class="title-banner-container">
 				<div class="main-container-title">
-					<span>
-						<?php echo get_field('sub_title', get_the_ID()); ?>
-					</span>
 					<h1>
 						<?php echo get_field('headline', get_the_ID()); ?>
 					</h1>
+					<span>
+						<?php echo get_field('sub_title', get_the_ID()); ?>
+					</span>
 				</div>
-				<div class="title-sub-banner-container">
+				<!-- <div class="title-sub-banner-container">
 					<span>100+ ananana</span> |
 					<span>100+ ananana</span>
-				</div>
+				</div> -->
 			</div>
 			<div class="image-slide-container">
 				<div class="slick-slider">
@@ -42,9 +42,6 @@ get_header(); ?>
 					} ?>
 					<?php if (get_field('banner_image_3', get_the_ID())) {
 						echo '<div><img src="' . get_field('banner_image_3', get_the_ID()) . '" alt=""></div>';
-					} ?>
-					<?php if (get_field('banner_image_4', get_the_ID())) {
-						echo '<div><img src="' . get_field('banner_image_4', get_the_ID()) . '" alt=""></div>';
 					} ?>
 				</div>
 			</div>
@@ -58,9 +55,11 @@ get_header(); ?>
 				<?php echo get_field('wer_wir_sind_text', get_the_ID()); ?>
 			</p>
 		</div>
+		<?php if( get_field('soll_kategorien_zu_sehen_sein_', get_the_ID()) ):  ?>
 		<div class="category-container col-full mb-3">
 			<div class="header-title-cat" style="text-align: center;">
-				<h2>Was wir haben</h2>
+				<h2>
+				<?php echo get_field('kategorie_title', get_the_ID()); ?></h2>
 			</div>
 			<div class="categories-container">
 				<?php
@@ -85,15 +84,16 @@ get_header(); ?>
 				} ?>
 			</div>
 		</div>
+		<?php endif; ?>
 		<div class="main-product-with-text-container col-full mb-3">
 			<div class="some_our_product_title text-center">
-				<h2>Ein glimps unsere Produkte</h2>
+				<h2><?php echo get_field('produkte_titel', get_the_ID()); ?>	</h2>
 			</div>
 			<div class="some_our_products_product_loop">
 				<?php
 				$args = array(
 					'post_type' => 'product',
-					'posts_per_page' => 12
+					'posts_per_page' => get_field('produkte_nummer', get_the_ID())
 				);
 				$loop = new WP_Query($args);
 				if ($loop->have_posts()) {
@@ -119,14 +119,9 @@ get_header(); ?>
 		<div class="where-to-find-us-container col-full mb-3">
 			<div class="info-text text-center">
 				<h1>
-					Wo man uns finden kann
+				<?php echo get_field('wo_man_uns_findet_title', get_the_ID()); ?>
 				</h1>
-				<div class="info">
-					Die Antik - Banausen
-					Sandra Wolgien
-					Pascalstr. 16
-					10587 Berlin
-					Tel: 0049 30 290 45 990
+				<div class="info"><?php echo get_field('kontaktinformation', get_the_ID()); ?>
 				</div>
 			</div>
 			<div class="map-google">

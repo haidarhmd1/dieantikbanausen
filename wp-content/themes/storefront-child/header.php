@@ -73,7 +73,10 @@
 		?>
 
 		<div id="content" class="site-content" tabindex="-1">
-			<div class="">
-
+			<?php if( !is_front_page() ){ ?>
+			<div class="col-full">
+				<?php }else{ ?>
+			<div>
 				<?php
+				}
 				do_action('storefront_content_top');

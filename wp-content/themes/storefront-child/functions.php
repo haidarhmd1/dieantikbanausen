@@ -36,4 +36,11 @@ if (!function_exists('nec_js_scripts')) :
 endif;
 add_action('wp_enqueue_scripts', 'nec_js_scripts', 30);
 add_filter('woocommerce_admin_disabled', '__return_true');
+add_action( 'init', 'jk_remove_storefront_handheld_footer_bar' );
+
+function jk_remove_storefront_handheld_footer_bar() {
+
+  remove_action( 'storefront_footer', 'storefront_handheld_footer_bar', 999 );
+
+}
 // END ENQUEUE PARENT ACTION

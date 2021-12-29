@@ -4,6 +4,9 @@
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
 wp-content/*
+wp-content/wc-logs
+wp-content/woocommerce_uploads
+!wp-content/uploads
 !wp-content/mu-plugins/
 !wp-content/plugins/
 !wp-content/themes/
@@ -18,6 +21,7 @@ wp-content/themes/twenty*/
 node_modules/
 
 account.txt
+wp-config.php
 
 # ignore log files and databases
 *.log

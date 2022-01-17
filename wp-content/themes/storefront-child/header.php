@@ -30,53 +30,45 @@
 	<div id="page" class="hfeed site">
 		<?php do_action('storefront_before_header'); ?>
 
-		<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
-			<div class="site-title">
-				<h1><?php echo get_bloginfo('name'); ?></h1>
-			</div>
-			<!-- <div class="menu-container">
-				<?php
-				// wp_nav_menu(array(
-				// 	'container' => false // Removes the container, leaving just the ul element
-				// ));
-				?>
-			</div> -->
-			<?php
-			/**
-			 * Functions hooked into storefront_header action
-			 *
-			 * @hooked storefront_header_container                 - 0
-			 * @hooked storefront_skip_links                       - 5
-			 * @hooked storefront_social_icons                     - 10
-			 * @hooked storefront_site_branding                    - 20
-			 * @hooked storefront_secondary_navigation             - 30
-			 * @hooked storefront_product_search                   - 40
-			 * @hooked storefront_header_container_close           - 41
-			 * @hooked storefront_primary_navigation_wrapper       - 42
-			 * @hooked storefront_primary_navigation               - 50
-			 * @hooked storefront_header_cart                      - 60
-			 * @hooked storefront_primary_navigation_wrapper_close - 68
-			 */
-			//do_action('storefront_header');
-			?>
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
 
-		</header><!-- #masthead -->
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a>
+      </div>
 
-		<?php
-		/**
-		 * Functions hooked in to storefront_before_content
-		 *
-		 * @hooked storefront_header_widget_region - 10
-		 * @hooked woocommerce_breadcrumb - 10
-		 */
-		do_action('storefront_before_content');
-		?>
-
-		<div id="content" class="site-content" tabindex="-1">
-			<?php if( !is_front_page() ){ ?>
-			<div class="col-full">
-				<?php }else{ ?>
-			<div>
-				<?php
-				}
-				do_action('storefront_content_top');
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#intro">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+          <li class="drop-down"><a href="">Drop Down</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="drop-down"><a href="#">Drop Down 2</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+      
+    </div>
+  </header><!-- #header -->

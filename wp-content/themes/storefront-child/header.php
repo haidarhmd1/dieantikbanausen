@@ -36,18 +36,18 @@
   <header id="header" class="fixed-top">
     <div class="container">
 
-      <!-- <div class="logo float-left"> -->
+      <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <h1 class="text-light"><a href="#header"><span>Die Antik Banausen</span></a></h1>
         <!-- <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
-      <!-- </div> -->
+      </div>
 
-      <nav class="main-nav">
+      <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#intro">Home</a></li>
-          <li><a href="#about">Wer wir sind</a></li>
-          <li><a href="#services">Was wir haben</a></li>
-          <li><a href="#portfolio">Unsere Artikel</a></li>
+          <li class="active"><a href="<?php echo (is_front_page()) ? '#intro' : site_url() . '#intro'; ?>">Home</a></li>
+          <li><a href="<?php echo (is_front_page()) ? '#about' : site_url() . '#about'; ?>">Wer wir sind</a></li>
+          <li><a href="<?php echo (is_front_page()) ? '#services' : site_url() . '#services'; ?>">Was wir haben</a></li>
+          <li><a href="<?php echo site_url() . '/unsere-artikel'; ?>">Unsere Artikel</a></li>
           <!-- <li><a href="#team">Unsere Gesischter</a></li> -->
           <!-- <li class="drop-down"><a href="">Drop Down</a>
             <ul>
@@ -66,7 +66,7 @@
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li> -->
-          <li><a href="#contact">Wo wir sind</a></li>
+          <li><a href="<?php echo (is_front_page()) ? '#contact' : site_url() . '#contact'; ?>">Wo wir sind</a></li>
         </ul>
       </nav><!-- .main-nav -->
       

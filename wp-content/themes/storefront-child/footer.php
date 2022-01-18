@@ -15,7 +15,7 @@
 	<?php do_action( 'storefront_before_footer' ); ?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="col-full">
+		<div class="container-fluid">
 			<p>© Die Antik Banausen 2021</p>
 		</div><!-- .col-full -->
 	</footer><!-- #colophon -->

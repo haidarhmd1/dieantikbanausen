@@ -48,6 +48,10 @@ h6 {
   padding: 0;
 }
 
+.wpcf7-form-control-wrap input {
+  width: 100%;
+}
+
 /* Back to top button */
 
 .back-to-top {
@@ -144,7 +148,7 @@ h6 {
 }
 
 #header .logo h1 {
-  font-size: 36px;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -155,7 +159,7 @@ h6 {
 
 #header .logo h1 a,
 #header .logo h1 a:hover {
-  color: #00366f;
+  color: #000;
   text-decoration: none;
 }
 
@@ -243,6 +247,23 @@ h6 {
 --------------------------------------------------------------*/
 
 /* Desktop Navigation */
+
+.logo.float-left {
+  display: flex;
+  position: relative;
+}
+
+@media screen and (min-width: 769px) {
+  .logo.float-left {
+    top: 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo.float-left {
+    top: 2px;
+  }
+}
 
 .main-nav {
   /* Drop Down */
@@ -357,7 +378,7 @@ h6 {
   left: -260px;
   width: 260px;
   padding-top: 18px;
-  background: rgba(19, 39, 57, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   transition: 0.4s;
 }
 
@@ -378,7 +399,7 @@ h6 {
 .mobile-nav a:hover,
 .mobile-nav .active > a,
 .mobile-nav li:hover > a {
-  color: #74b5fc;
+  color: #302b2b;
   text-decoration: none;
 }
 
@@ -414,17 +435,18 @@ h6 {
   z-index: 9998;
   border: 0;
   background: none;
-  font-size: 24px;
+  font-size: 18px;
   transition: all 0.4s;
   outline: none !important;
   line-height: 1;
   cursor: pointer;
   text-align: right;
+  padding: 0;
 }
 
 .mobile-nav-toggle i {
   margin: 18px 18px 0 0;
-  color: #004289;
+  color: #000;
 }
 
 .mobile-nav-overly {
@@ -434,7 +456,7 @@ h6 {
   top: 0;
   left: 0;
   position: fixed;
-  background: rgba(19, 39, 57, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   overflow: hidden;
   display: none;
 }
@@ -754,17 +776,17 @@ h6 {
   padding: 6px 20px;
   font-size: 12px;
   line-height: 20px;
-  color: #007bff;
+  color: #000;
   border-radius: 50px;
   text-transform: uppercase;
-  background: #ecf5ff;
+  background: #c4c4c4;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
 
 #portfolio #portfolio-flters li:hover,
 #portfolio #portfolio-flters li.filter-active {
-  background: #007bff;
+  background: #000;
   color: #fff;
 }
 
@@ -850,7 +872,7 @@ h6 {
   text-align: center;
   width: 36px;
   height: 36px;
-  background: #007bff;
+  background: #000;
   border-radius: 50%;
   margin: 10px 4px 0 4px;
 }
@@ -864,7 +886,7 @@ h6 {
 
 #portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview:hover,
 #portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details:hover {
-  background: #3395ff;
+  background: #000;
 }
 
 #portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview:hover i,
@@ -873,7 +895,7 @@ h6 {
 }
 
 #portfolio .portfolio-item .portfolio-wrap:hover {
-  background: #003166;
+  background: #000;
 }
 
 #portfolio .portfolio-item .portfolio-wrap:hover .portfolio-info {
@@ -1132,7 +1154,7 @@ h6 {
 
 #contact .info i {
   font-size: 32px;
-  color: #007bff;
+  color: #000;
   float: left;
   line-height: 1;
 }
@@ -1362,7 +1384,7 @@ h6 {
   }
 
   #header .logo h1 {
-    font-size: 28px;
+    font-size: 16px;
     padding: 8px 0;
   }
 

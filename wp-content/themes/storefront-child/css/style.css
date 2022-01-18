@@ -8,6 +8,9 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: #fff;
@@ -171,10 +174,15 @@ h6 {
 --------------------------------------------------------------*/
 
 #intro {
+  /* height: 80vh; */
   width: 100%;
   position: relative;
-  background-color: #000;
+  background-color: #1e1e1e;
   padding: 200px 0 120px 0;
+}
+
+#intro .intro-info p {
+  color: white;
 }
 
 #intro .intro-img {
@@ -192,11 +200,6 @@ h6 {
   margin-bottom: 40px;
   font-size: 48px;
   font-weight: 700;
-}
-
-#intro .intro-info h2 span {
-  color: #74b5fc;
-  text-decoration: underline;
 }
 
 #intro .intro-info .btn-get-started,
@@ -244,6 +247,8 @@ h6 {
 .main-nav {
   /* Drop Down */
   /* Deep Drop Down */
+  display: flex;
+  justify-content: center;
 }
 
 .main-nav,
@@ -453,6 +458,14 @@ h6 {
 /* Sections Header
 --------------------------------*/
 
+.all-articles {
+  background: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  color: black;
+}
+
 .section-header h3 {
   font-size: 36px;
   color: #283d50;
@@ -474,7 +487,13 @@ h6 {
 --------------------------------*/
 
 .section-bg {
-  background: #ecf5ff;
+  background: #1e1e1e;
+}
+
+#services .section-header h3,
+#services .section-header p
+ {
+  color: white;
 }
 
 /* About Us Section

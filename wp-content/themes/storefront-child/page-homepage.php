@@ -27,7 +27,7 @@ get_header(); ?>
     </div>
 
     <div class="intro-info">
-      <h2>Die<br><span>Antik</span><br>Banausen</h2>
+      <h2>Die<br><span>Antik - </span><br>Banausen</h2>
       <div>
         <p>
           <?php echo get_field('sub_title'); ?>

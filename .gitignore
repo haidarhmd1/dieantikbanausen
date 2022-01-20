@@ -26,3 +26,4 @@ account.txt
 *.log
 *.sql
 *.sqlite
+wp-config.php

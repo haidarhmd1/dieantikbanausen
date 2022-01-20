@@ -38,7 +38,7 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <h1 class="text-light"><a href="#header"><span>Die Antik Banausen</span></a></h1>
+        <h1 class="text-light"><a href="<?php echo site_url(); ?>"><span>Die Antik Banausen</span></a></h1>
         <!-- <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 

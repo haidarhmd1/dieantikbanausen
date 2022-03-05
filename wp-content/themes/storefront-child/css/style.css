@@ -676,7 +676,7 @@ h6 {
 
 #services .description {
   font-size: 14px;
-  margin-left: 40px;
+  margin-left: 0;
   line-height: 24px;
   margin-bottom: 0;
 }
@@ -1428,6 +1428,7 @@ section#intro .intro-img {
 .section-header h3,
 #services .title {
   font-family: 'Bangers', cursive;
+  margin-left: 0;
 }
 
 /*--------------------------------------------------------------

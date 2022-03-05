@@ -74,6 +74,13 @@ get_header(); ?>
         </p>
       </header>
 
+      <?php if(get_field('kategorie_bild')) { ?>
+      <div class="row">
+        <div class="image-banner-two-bg" style="background-image: url(<?php echo get_field('kategorie_bild'); ?>);">
+        </div>
+      </div>
+      <?php } ?>
+
       <div class="row" style="justify-content: center;">
         <?php
       $categories = get_terms( 'category', array(

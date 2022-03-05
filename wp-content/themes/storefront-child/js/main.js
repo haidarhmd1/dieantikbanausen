@@ -132,4 +132,6 @@
     loop: true,
     items: 1,
   });
+
+  $(".box").matchHeight({ byRow: false });
 })(jQuery);

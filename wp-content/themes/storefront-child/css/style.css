@@ -1383,6 +1383,53 @@ h6 {
   color: #f1f7ff;
 }
 
+
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+
+section#intro {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 80vh;
+}
+
+.intro-section::after {
+  content: "";
+  background-color: black;
+  opacity: 0.4;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.intro-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+section#intro .intro-img {
+  height: 400px;
+  width: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 7px;
+}
+
+.section-header p {
+  padding: 0;
+}
+
+.section-header h3,
+#services .title {
+  font-family: 'Bangers', cursive;
+}
+
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/

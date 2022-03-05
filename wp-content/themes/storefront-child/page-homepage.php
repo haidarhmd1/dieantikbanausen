@@ -19,11 +19,11 @@ get_header(); ?>
 <!--==========================
     Intro Section
   ============================-->
-<section id="intro" class="clearfix">
+<section id="intro" class="clearfix intro-section"
+  style="background-image: url(<?php echo get_field('banner_image'); ?>);">
   <div class="container">
 
-    <div class="intro-img">
-      <img src="<?php echo get_field('banner_image'); ?>" alt="" class="img-fluid">
+    <div class="intro-img" style="background-image: url(<?php echo get_field('banner_image'); ?>);">
     </div>
 
     <div class="intro-info">

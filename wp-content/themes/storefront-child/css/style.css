@@ -1431,6 +1431,17 @@ section#intro .intro-img {
   margin-left: 0;
 }
 
+.image-banner-two-bg {
+  height: 400px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  margin-top: 15px;
+  margin-bottom: 45px;
+}
+
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/

@@ -1485,7 +1485,23 @@ section#intro .intro-img {
   }
 }
 
+@media (min-width: 767px) {
+  section#intro {
+    height: 750px;
+  }
+}
+
 @media (max-width: 768px) {
+  section#intro {
+    height: auto;
+    padding-bottom: 75px;
+  }
+
+  .image-banner-two-bg {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
   .back-to-top {
     bottom: 15px;
   }

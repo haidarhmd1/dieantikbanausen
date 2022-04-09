@@ -62,3 +62,42 @@ function jk_remove_storefront_handheld_footer_bar() {
 
 }
 // END ENQUEUE PARENT ACTION
+
+// START CUSTOM POST TYPE
+
+function custom_what_we_have() {
+
+    //labels array added inside the function and precedes args array
+    
+    $labels = array(
+    'name' => _x( 'Was haben wir', 'post type general name' ),
+    'singular_name' => _x( 'Was haben wir', 'post type singular name' ),
+    'add_new' => _x( 'Add New', 'Was haben wir' ),
+    'add_new_item' => __( 'Add New Was haben wir' ),
+    'edit_item' => __( 'Edit Was haben wir' ),
+    'new_item' => __( 'New Was haben wir' ),
+    'all_items' => __( 'All Was haben wirs' ),
+    'view_item' => __( 'View Was haben wir' ),
+    'search_items' => __( 'Search Was haben wirs' ),
+    'not_found' => __( 'No Was haben wirs found' ),
+    'not_found_in_trash' => __( 'No Was haben wirs found in the Trash' ),
+    'parent_item_colon' => '',
+    'menu_name' => 'Was haben wir'
+    );
+    
+    // args array
+    
+    $args = array(
+    'labels' => $labels,
+    'description' => 'Was haben wir',
+    'public' => true,
+    'menu_position' => 4,
+    'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt','page-attributes' ),
+    'has_archive' => true,
+    );
+    
+    register_post_type( 'was_wir_haben', $args );
+    }
+    add_action( 'init', 'custom_what_we_have' );
+
+    // END CUSTOM POST TYPE

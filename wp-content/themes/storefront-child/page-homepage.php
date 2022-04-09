@@ -19,8 +19,7 @@ get_header(); ?>
 <!--==========================
     Intro Section
   ============================-->
-<section id="intro" class="clearfix intro-section"
-  style="background-image: url(<?php echo get_field('banner_image'); ?>);">
+<section id="intro" class="clearfix intro-section" style="background-image: url(<?php echo get_field('banner_image'); ?>);">
   <div class="container">
 
     <div class="intro-img" style="background-image: url(<?php echo get_field('banner_image'); ?>);">
@@ -52,9 +51,17 @@ get_header(); ?>
         <h3>
           <?php echo get_field('wer_wir_sind'); ?>
         </h3>
-        <p>
-          <?php echo get_field('wer_wir_sind_text'); ?>
-        </p>
+        <div class="section-about-us-container" style="display: <?php echo (get_field('wer_wir_sind_Image') ? 'flex;' : 'block;'); ?> flex-wrap: wrap; justify-content: center;">
+          <div class="text-wrapper" style="<?php if (get_field('wer_wir_sind_Image')) {
+                                              echo 'align-self: center;';
+                                            } ?>">
+            <?php echo get_field('wer_wir_sind_text'); ?>
+          </div>
+          <?php if (get_field('wer_wir_sind_Image')) { ?>
+            <div class="image-wrapper" style="height: 400px; width: 250px; background-image: url('<?php echo get_field('wer_wir_sind_Image') ?>'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 7px;">
+            </div>
+          <?php } ?>
+        </div>
       </header>
     </div>
   </section><!-- #about -->
@@ -74,34 +81,36 @@ get_header(); ?>
         </p>
       </header>
 
-      <?php if(get_field('kategorie_bild')) { ?>
-      <div class="row">
-        <div class="image-banner-two-bg" style="background-image: url(<?php echo get_field('kategorie_bild'); ?>);">
+      <?php if (get_field('kategorie_bild')) { ?>
+        <div class="row">
+          <div class="image-banner-two-bg" style="background-image: url(<?php echo get_field('kategorie_bild'); ?>);">
+          </div>
         </div>
-      </div>
       <?php } ?>
 
       <div class="row" style="justify-content: center;">
         <?php
-      $categories = get_terms( 'category', array(
-        'orderby'    => 'count',
-        'hide_empty' => true,
-    ) );
-        foreach ($categories as $ct) {
-          ?>
-        <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s" style="cursor: pointer;">
-          <div class="box">
-            <h4 class="title">
-              <?php echo $ct->name; ?>
-            </h4>
-            <p class="description">
-              <?php echo $ct->description; ?>
-            </p>
+        $args = array(
+          'post_type' => 'was_wir_haben',
+          'orderby' => 'menu_order',
+          'order' => 'ASC'
+        );
+        $wasWirHaben = new WP_Query($args);
+        while ($wasWirHaben->have_posts()) : $wasWirHaben->the_post();
+        ?>
+          <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s" style="cursor: pointer;">
+            <div class="box">
+              <h4 class="title">
+                <?php echo get_the_title(); ?>
+              </h4>
+              <p class="description">
+                <?php echo get_the_content(); ?>
+              </p>
+            </div>
           </div>
-        </div>
         <?php
-        }
-      ?>
+        endwhile;
+        ?>
       </div>
 
     </div>
@@ -120,56 +129,62 @@ get_header(); ?>
       <div class="row">
         <div class="col-lg-12">
           <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter="*" class="filter-active">Alle</li>
             <?php
-        foreach ($categories as $ct) {
-          ?>
-            <li data-filter=".filter-<?php echo $ct->slug; ?>">
-              <?php echo $ct->name; ?>
-            </li>
+            $categories = get_terms('category', array(
+              'orderby'    => 'count',
+              'hide_empty' => true,
+            ));
+            foreach ($categories as $ct) {
+            ?>
+              <li data-filter=".filter-<?php echo $ct->slug; ?>">
+                <?php echo $ct->name; ?>
+              </li>
             <?php
-        }
-      ?>
+            }
+            ?>
           </ul>
         </div>
       </div>
 
       <div class="row portfolio-container">
         <?php
-              $args = array(  
-                            'post_type' => 'post',
-                            'post_status' => 'publish',
-                            'posts_per_page' => 8, 
-                            'orderby' => 'title',
-                            'order' => 'ASC',
-                        );
+        $args = array(
+          'post_type' => 'post',
+          'post_status' => 'publish',
+          'posts_per_page' => 10,
+          'orderby' => 'title',
+          'order' => 'ASC',
+        );
 
-              $loop = new WP_Query( $args );
-              while ( $loop->have_posts() ) : $loop->the_post();
-                ?>
+        $loop = new WP_Query($args);
+        while ($loop->have_posts()) : $loop->the_post();
+          $ctTermString = '';
+          foreach (get_the_category(get_the_ID()) as $cterm) {
+            $ctTermString .= 'filter-' . $cterm->slug . ' ';
+          }
+        ?>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo get_the_category(get_the_ID())[0]->slug; ?>">
-          <div class="portfolio-wrap">
-            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4><a href="#">
-                  <?php echo get_the_title(); ?>
-                </a></h4>
-              <p>
-                <?php echo get_the_content(); ?>
-              </p>
-              <div>
-                <a href="<?php echo get_the_post_thumbnail_url(); ?>" data-lightbox="portfolio"
-                  data-title="<?php echo get_the_title(); ?>" class="link-preview" title="Preview"><i
-                    class="ion ion-eye"></i></a>
+          <div class="col-lg-4 col-md-6 portfolio-item <?php echo $ctTermString; ?>">
+            <div class="portfolio-wrap">
+              <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">
+                    <?php echo get_the_title(); ?>
+                  </a></h4>
+                <p>
+                  <?php echo get_the_content(); ?>
+                </p>
+                <div>
+                  <a href="<?php echo get_the_post_thumbnail_url(); ?>" data-lightbox="portfolio" data-title="<?php echo get_the_title(); ?>" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         <?php
-              endwhile;
+        endwhile;
 
-              wp_reset_postdata(); 
+        wp_reset_postdata();
         ?>
 
       </div>
@@ -287,9 +302,7 @@ get_header(); ?>
         <div class="col-lg-6">
           <div class="map mb-4 mb-lg-0">
 
-            <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas"
-                src="https://maps.google.com/maps?q=Pascalstr.%2016,%2010587%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
+            <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Pascalstr.%2016,%2010587%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
               <style>
                 .mapouter {
                   position: relative;

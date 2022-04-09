@@ -117,7 +117,6 @@
       itemSelector: ".portfolio-item",
     });
     $("#portfolio-flters li").on("click", function () {
-      console.log("test");
       $("#portfolio-flters li").removeClass("filter-active");
       $(this).addClass("filter-active");
 
